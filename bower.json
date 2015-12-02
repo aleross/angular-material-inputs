@@ -1,0 +1,29 @@
+{
+    "name": "angular-material-inputs",
+    "version": "0.1.0",
+    "homepage": "https://github.com/aleross/angular-material-inputs",
+    "authors": [
+        "Alex Ross <davidross.alex@gmail.com>"
+    ],
+    "description": "AngularJS directives for material design HTML inputs",
+    "main": "material-inputs.min.js",
+    "keywords": [
+        "material", "material design", "angular", "angularjs", "directives", "forms"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests",
+        "tmp",
+        "*.iml",
+        "Gruntfile.js",
+        "package.json",
+        "grunt"
+    ],
+    "dependencies": {
+        "angular": "latest"
+    }
+}
