@@ -4,9 +4,17 @@
         "watch"
     ],
     "build": [
+        "build-js",
+        "build-css"
+    ],
+    "build-js": [
         "jscs",
         "concat",
         "uglify"
+    ],
+    "build-css": [
+        "sass",
+        "postcss"
     ],
     "test": [
         "karma:unit"
