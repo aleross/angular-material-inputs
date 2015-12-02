@@ -6,7 +6,7 @@ module.exports = {
     },
     sass: {
         files: ['src/sass/**/*.scss'],
-        tasks: ['build-css']
+        tasks: ['build-css'],
     },
     livereload: {
         files: ['segment.js', 'example.html'],

@@ -1,10 +1,10 @@
 module.exports = {
     options: {
-        sourceMap: true
+        sourceMap: true,
     },
     build: {
         files: {
-            'dist/material-inputs.css': 'src/sass/material-inputs.scss'
-        }
-    }
+            'dist/material-inputs.css': 'src/sass/material-inputs.scss',
+        },
+    },
 };
