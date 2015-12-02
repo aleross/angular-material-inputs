@@ -1,9 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="example">
     <head>
 
+        <!-- Angular -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+
+        <!-- Bootstrap -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Material inputs -->
+        <link href="dist/material-inputs.css" rel="stylesheet">
+        <script src="dist/material-inputs.js"></script>
+
+        <!-- Application -->
+        <script>
+            angular.module('example', ['material-inputs']);
+        </script>
     </head>
     <body>
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Example</h1>
+            </div>
+        </div>
+        <div class="container">
+            <material-text>
 
+            </material-text>
+        </div>
     </body>
 </html>
