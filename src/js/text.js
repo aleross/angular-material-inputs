@@ -14,6 +14,10 @@ angular.module('material-inputs').directive('materialText', function () {
 
     return {
         templateUrl: 'templates/text.tpl.html',
+        compile: function (element, attrs) {
+
+        },
+
         link: function (scope, element, attrs) {
 
         },

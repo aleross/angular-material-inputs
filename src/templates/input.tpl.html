@@ -1,0 +1,7 @@
+<label for="{{ ::id }}" ng-bind="::label"></label>
+<div class="validation" ng-messages="formField.$error" ng-if="formField.$dirty">
+    <span class="text-danger" ng-message="required">This is required.</span>
+    <span class="text-danger" ng-message="email">Please enter a valid email address.</span>
+    <span class="text-danger" ng-message="url">Please enter a valid URL starting with http:// or https://</span>
+    <span class="text-danger" ng-message="equals">Passwords must match.</span>
+</div>

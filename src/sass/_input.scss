@@ -1,0 +1,216 @@
+/* ==========================================================================
+   Brand variables
+   ========================================================================== */
+
+$border-radius:         2px;
+$transition-speed:      0.15s; // global transition speed for consistent animations
+$transition-timing:     ease-out;
+$box-shadow:            0 0 0 1px rgba(39,44,48,0.05), 0 2px 7px 1px rgba(39,44,48,0.16);
+
+/* Colors
+========================================================================== */
+$brand-primary:         #4078C0 ; // we need a rich blue
+$brand-success:         #6CC644 ;
+$brand-info:            #23b7e5 ;
+$brand-warning:         #ff902b ;
+$brand-danger:          #ff5d5d ;
+$brand-inverse:         #1D242C ;
+$brand-selected:        #FFFBE9 ;
+
+$gray:                  #798c9c;
+$gray-dark:             #31373D;
+$gray-darker:           darken($gray, 35);
+$gray-light:            lighten($gray, 10);
+$gray-lighter:          lighten($gray, 40);
+$border-color:          #ebeef0;
+$border-color-dark:     darken($border-color, 5);
+$gray-bg:               lighten($gray-lighter, 3);
+
+/* Text
+========================================================================== */
+$text-size:             13px;
+$text-color:            $gray-darker;
+$alt-text-color:        $gray-light;
+$text-sm:               11px;
+$text-md:               16px;
+$text-lg:               24px;
+
+
+
+/* ==========================================================================
+   Material design inputs based off of Bootstrap
+   ========================================================================== */
+
+/* All forms
+========================================================================== */
+.form-control, label, .form-label {
+    font-size: 16px;
+}
+
+.help-block {
+    color: $gray;
+}
+
+// Non-material form controls
+.form-control {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #dde6e9;
+    font-weight: normal;
+    color: $gray-darker;
+    &:focus {
+        border-color: $brand-primary;
+        outline: 0;
+        box-shadow: none;
+    }
+}
+
+/* Material forms
+========================================================================== */
+.form-material .form-group {
+    position: relative;
+    margin-bottom: 0;
+    padding: 17px 0 40px 0;
+    display: block;
+    transition: none; // to keep underline from animating when form-group is applied dynamically
+
+    /* Labels
+    ========================================================================== */
+    label {
+        // Positioning when not focused or active
+        position: absolute;
+        top: 20px;
+        left: 0;
+        cursor: text;
+        z-index: 10;
+        transform: translateY(0);
+    }
+
+    label, .form-label {
+        color: lighten($gray-light, 15);
+        font-weight: 400;
+        transition: all $transition-speed ease-out;
+    }
+
+    .selected .form-label {
+        color: $gray-darker;
+    }
+
+    /* Input addons
+========================================================================== */
+    .input-group {
+        position: static;
+        .input-group-addon {
+            padding: 0 0 0 5px;
+            color: $gray-light;
+            border: none;
+            background-color: transparent;
+            border-radius: 0 !important;
+            box-shadow: 0 1px 0 $border-color;
+            transition: all $transition-speed ease-out;
+            i {
+                font-size: 21px;
+            }
+        }
+    }
+
+    /* Inputs
+    ========================================================================== */
+    input.form-control {
+        padding-left: 0;
+        padding-right: 0;
+        border: 0;
+        border-radius: 0;
+        background-color: transparent;
+        box-shadow: 0 1px 0 $border-color;
+        transition: all $transition-speed ease-out;
+
+        /* Focus state
+        ========================================================================== */
+        &:focus, &.active {
+            // Positioning for label when active/focused
+            +label {
+                font-size: 12px;
+                cursor: default;
+                transform: translateY(-20px);
+                color: $gray-light;
+                font-weight: 500;
+            }
+        }
+
+        &:focus {
+            // Color change when focused
+            background-color: transparent;
+            box-shadow: 0 2px 0 $brand-primary;
+            +label {
+                color: $brand-primary;
+            }
+            ~.input-group-addon {
+                box-shadow: 0 2px 0 $brand-primary;
+                color: $brand-primary;
+                i {
+                    color: $brand-primary;
+                }
+            }
+        }
+
+        /* Disabled state
+        ========================================================================== */
+        &[disabled], &[readonly] {
+            border-bottom-color: transparent;
+            color: $gray-light;
+            background-image: linear-gradient(to right, rgba(0,0,0,0.26) 0%, rgba(0,0,0,0.26) 33%, transparent 0%);
+            background-image: -ms-linear-gradient(left, transparent 0%, rgba(0,0,0,0.26) 100%);
+            background-position: 0 bottom;
+            background-size: 4px 1px;
+            background-repeat: repeat-x;
+            margin-bottom: -1px;
+            cursor: default;
+            box-shadow: none;
+
+            +label {
+                cursor: default;
+            }
+
+            ~.input-group-addon {
+                margin-bottom: -1px;
+                border-bottom-color: transparent;
+                color: $gray-light;
+                background-image: linear-gradient(to right, rgba(0,0,0,0.26) 0%, rgba(0,0,0,0.26) 33%, transparent 0%);
+                background-image: -ms-linear-gradient(left, transparent 0%, rgba(0,0,0,0.26) 100%);
+                background-position: 0 bottom;
+                background-size: 4px 1px;
+                background-repeat: repeat-x;
+                cursor: default;
+                box-shadow: none;
+                i {
+                    color: $gray-light;
+                }
+            }
+        }
+    }
+
+    /* Validation messages
+    ========================================================================== */
+    .validation {
+        position: absolute;
+        left: 0;
+        bottom: 18px;
+        span {
+            font-size: 12px;
+        }
+    }
+}
+
+/* Normal inputs
+========================================================================== */
+input {
+    padding: 5px 10px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    outline: none;
+    font-size: 14px;
+    &:focus {
+        border: 1px solid $brand-primary;
+    }
+}
