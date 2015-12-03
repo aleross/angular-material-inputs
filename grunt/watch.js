@@ -2,14 +2,18 @@ module.exports = {
     options: { livereload: false },
     js: {
         files: ['src/**/*.js'],
-        tasks: ['karma:watch:run', 'build'],
+        tasks: ['concat'],
     },
     sass: {
         files: ['src/sass/**/*.scss'],
         tasks: ['build-css'],
     },
+    templates: {
+        files: ['src/templates/*'],
+        tasks: ['html2js', 'concat'],
+    },
     livereload: {
-        files: ['segment.js', 'example.html'],
+        files: ['dist/*', 'index.html'],
         options: { livereload: true },
     },
 };
