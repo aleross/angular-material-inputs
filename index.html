@@ -3,8 +3,8 @@
     <head>
 
         <!-- Angular -->
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-messages.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-messages.min.js"></script>
 
         <!-- Bootstrap -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -31,15 +31,17 @@
             </div>
         </div>
         <div class="container">
-            <material-text mi-nolabel>
+            <material-text mi-nolabel mi-label="test">
+                <span></span>
 
+                <p></p>
             </material-text>
 
             <div class="row">
                 <div class="col-sm-3">
                     <form class="form-material">
                         <material-input label="Test" field="test">
-                            <input type="number"
+                            <span class="input-group-addon ion-search"></span>
                         </material-input>
                         <p ng-bind="test"></p>
                     </form>
