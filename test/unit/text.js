@@ -25,6 +25,16 @@ describe('material-text', function () {
         return angular.element(element);
     }
 
+    it('should create an input if not provided', function () {
+        var text = createElement();
+        expect(text).toHaveElement('input');
+    });
+
+    it('should create a label if not provided', function () {
+        var text = createElement();
+        expect(text).toHaveElement('label');
+    });
+
     it('should not allow two inputs', function () {
         var error = new Error('material-text can only have one <input>.');
         expect(function () {
@@ -38,6 +48,9 @@ describe('material-text', function () {
             createElement('<label></label><label></label>');
         }).toThrow(error);
     });
+
+    // Attributes
+
 
     // Class validation
     it('should add the wrapper class', function () {

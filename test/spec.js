@@ -18,6 +18,22 @@
 
         jasmine.addMatchers({
 
+            toHaveElement: function () {
+                return {
+                    compare: function (actual, expected) {
+                        var results = {
+                            pass: actual.find(expected).length > 0
+                        };
+
+                        results.message = 'Expected ' + angular.mock.dump(actual);
+                        results.message += !results.pass ? '' : ' not ';
+                        results.message += 'to contain ' + expected + '.';
+
+                        return results;
+                    }
+                };
+            },
+
             toHaveClass: function () {
                 return {
                     compare: function (actual, expected) {
