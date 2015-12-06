@@ -1,26 +1,28 @@
 describe('material-text', function () {
 
-    var scope, $compile;
+    var scope, $compile, miClasses;
 
     beforeEach(module('material-inputs'));
 
-
-    beforeEach(inject(function ($rootScope, _$compile_) {
+    // Gets services we need to be able to create
+    // a new sample directive before each test
+    beforeEach(inject(function ($rootScope, _$compile_, _miClasses_) {
         $compile = _$compile_;
-
         scope = $rootScope.$new();
+        miClasses = _miClasses_;
     }));
 
-    // Creates
+    // Creates a clean <material-text> before each test
+    // takes optional HTML contents
     function createElement(contents) {
         var element,
-            template = '<material-text>' + contents + '</material-text>';
+            template = '<material-text>' + contents || '' + '</material-text>';
 
         element = $compile(template)(scope);
 
         // Trigger changes
         scope.$apply();
-        return element;
+        return angular.element(element);
     }
 
     it('should not allow two inputs', function () {
@@ -35,5 +37,24 @@ describe('material-text', function () {
         expect(function () {
             createElement('<label></label><label></label>');
         }).toThrow(error);
+    });
+
+    // Class validation
+    it('should add the wrapper class', function () {
+        var text = createElement();
+        expect(text).toHaveClass(miClasses.input);
+    });
+
+    it('should add and remove the focused class', function () {
+        var text = createElement(),
+            input = text.find('input');
+
+        // Focus
+        input.triggerHandler('focus');
+        expect(text).toHaveClass(miClasses.focused);
+
+        // Blur
+        input.triggerHandler('blur');
+        expect(text).not.toHaveClass(miClasses.focused);
     });
 });

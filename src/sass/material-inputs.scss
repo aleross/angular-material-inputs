@@ -5,3 +5,11 @@
 @import 'checkbox';
 @import 'select';
 @import 'input';
+
+// General styling of inputs
+.mi-input {
+
+    input, label {
+        font-size: 16px;
+    }
+}

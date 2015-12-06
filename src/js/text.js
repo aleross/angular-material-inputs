@@ -7,7 +7,7 @@
  *
  * @param mi-label
  */
-angular.module('material-inputs').directive('materialText', function () {
+angular.module('material-inputs').directive('materialText', function (miClasses) {
     'use strict';
 
     // TODO: add/remove classes and styling
@@ -26,11 +26,11 @@ angular.module('material-inputs').directive('materialText', function () {
             element.append(newInput);
 
             newInput.on('focus', function () {
-
+                element.addClass(miClasses.focused);
             });
 
             newInput.on('blur', function () {
-
+                element.removeClass(miClasses.focused);
             });
 
             newInput.on('input', function () {
@@ -55,10 +55,9 @@ angular.module('material-inputs').directive('materialText', function () {
     return {
         compile: function (element, attrs) {
 
+            element.addClass('mi-input mi-text');
             setupInput(element);
             setupLabel(element, attrs['miLabel']);
-
-
 
         },
 

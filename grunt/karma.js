@@ -3,6 +3,7 @@ module.exports = {
         files: [
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
+            'test/spec.js',
             'dist/material-inputs.js',
             'test/unit/*.js',
         ],
