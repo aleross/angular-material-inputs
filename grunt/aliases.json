@@ -9,7 +9,6 @@
     ],
     "build-js": [
         "jscs",
-        "html2js",
         "concat",
         "uglify"
     ],

@@ -64,6 +64,10 @@
     /* Focused/has-value states
     ========================================================================== */
     &.mi-focused {
+        label {
+            color: $primary;
+        }
+
         &:after {
             left: 0;
             visibility: visible;
@@ -74,7 +78,6 @@
     &.mi-focused, &.mi-has-value {
         label {
             transform: translateY(-20px); // floating label
-            color: $primary;
             font-weight: 500;
             font-size: 12px;
         }
