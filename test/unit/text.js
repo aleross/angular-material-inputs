@@ -19,9 +19,8 @@ describe('material-text', function () {
             template = '<material-text>' + contents || '' + '</material-text>';
 
         element = $compile(template)(scope);
-
-        // Trigger changes
         scope.$apply();
+
         return angular.element(element);
     }
 
@@ -50,12 +49,16 @@ describe('material-text', function () {
     });
 
     // Attributes
+    // TODO
+    it('should use and interpolate miLabel', function () {
+
+    });
 
 
     // Class validation
-    it('should add the wrapper class', function () {
+    it('should add the wrapper and text input classes', function () {
         var text = createElement();
-        expect(text).toHaveClass(miClasses.input);
+        expect(text).toHaveClass(miClasses.input + ' ' + miClasses.text);
     });
 
     it('should add and remove the focused class', function () {
@@ -69,5 +72,29 @@ describe('material-text', function () {
         // Blur
         input.triggerHandler('blur');
         expect(text).not.toHaveClass(miClasses.focused);
+    });
+
+    it('should add and remove the has-value class according to model updates', function () {
+        var text = createElement('<input ng-model="test">');
+        expect(text).not.toHaveClass(miClasses.hasValue);
+        scope.$apply('test = "test"');
+        expect(text).toHaveClass(miClasses.hasValue);
+        scope.$apply('test = ""');
+        expect(text).not.toHaveClass(miClasses.hasValue);
+    });
+
+    it('should add and remove the has-value class according to DOM updates', function () {
+        var text = createElement(),
+            input = text.find('input');
+        expect(text).not.toHaveClass(miClasses.hasValue);
+        input.val('test').triggerHandler('input');
+        expect(text).toHaveClass(miClasses.hasValue);
+        input.val('').triggerHandler('input');
+        expect(text).not.toHaveClass(miClasses.hasValue);
+    });
+
+    it('should add the has-value class for static values', function () {
+        var text = createElement('<input value="test">');
+        expect(text).toHaveClass(miClasses.hasValue);
     });
 });

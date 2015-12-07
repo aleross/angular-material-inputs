@@ -13,6 +13,20 @@ angular.module('material-inputs').directive('materialText', function (miClasses)
     // TODO: add/remove classes and styling
     // TODO: ID/name
     // TODO: attribute pass-through (?)
+    // Todo: mi-autocomplete
+    // Todo: label states/classes/styling
+
+    function updateHasValue(element) {
+        var input = element.find('input'),
+            hasValue = input.val().length > 0;
+
+        // Todo check for invalid input too
+        if (hasValue) {
+            element.addClass(miClasses.hasValue);
+        } else {
+            element.removeClass(miClasses.hasValue);
+        }
+    }
 
     function setupInput(element) {
         var input = element.find('input');
@@ -22,21 +36,24 @@ angular.module('material-inputs').directive('materialText', function (miClasses)
 
         // If an input isn't included, insert the default
         if (!input.length) {
-            var newInput = angular.element('<input>');
-            element.append(newInput);
-
-            newInput.on('focus', function () {
-                element.addClass(miClasses.focused);
-            });
-
-            newInput.on('blur', function () {
-                element.removeClass(miClasses.focused);
-            });
-
-            newInput.on('input', function () {
-
-            });
+            input = angular.element('<input>');
+            element.append(input);
         }
+
+        // Event handlers
+        input.on('focus', function () {
+            element.addClass(miClasses.focused);
+        });
+
+        input.on('blur', function () {
+            element.removeClass(miClasses.focused);
+        });
+
+        input.on('input', function () {
+            updateHasValue(element);
+        });
+
+        updateHasValue(element);
     }
 
     function setupLabel(element, miLabel) {
@@ -55,7 +72,7 @@ angular.module('material-inputs').directive('materialText', function (miClasses)
     return {
         compile: function (element, attrs) {
 
-            element.addClass('mi-input mi-text');
+            element.addClass(miClasses.input + ' ' + miClasses.text);
             setupInput(element);
             setupLabel(element, attrs['miLabel']);
 
@@ -64,5 +81,47 @@ angular.module('material-inputs').directive('materialText', function (miClasses)
         link: function (scope, element, attrs) {
 
         },
+
+        controller: function ($scope, $element, $attrs) {
+
+            this.setHasValue = function (hasValue) {
+                if (hasValue) {
+                    $element.addClass(miClasses.hasValue);
+                } else {
+                    $element.removeClass(miClasses.hasValue);
+                }
+            }
+        }
     };
+});
+
+/**
+ * <input> directive allows us to hook into ngModel updates.
+ */
+angular.module('material-inputs').directive('input', function () {
+    return {
+        restrict: 'E',
+        require: ['^?materialText', '?ngModel'],
+        link: function (scope, element, attr, ctrls) {
+            var miCtrl = ctrls[0],
+                ngModelCtrl = ctrls[1];
+
+            // Only use custom input directive
+            // if nested within <material-text>
+            if (!miCtrl) return;
+
+            // Update has-value status when reading values from the DOM ($parsers)
+            // and when model updates are pushed to the DOM ($formatters)
+            if (ngModelCtrl) {
+
+                function updateHasValue(value) {
+                    miCtrl.setHasValue(!ngModelCtrl.$isEmpty(value));
+                    return value;
+                }
+
+                ngModelCtrl.$parsers.push(updateHasValue);
+                ngModelCtrl.$formatters.push(updateHasValue);
+            }
+        }
+    }
 });

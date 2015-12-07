@@ -1,10 +1,26 @@
+/* ==========================================================================
+   Material design for text inputs using <material-text>
+   ========================================================================== */
 .mi-text {
+    display: flex;
+    position: relative;
+    padding: 20px 0;
 
+    /* Non-focused/has-value states
+    ========================================================================== */
     label {
+        position: absolute;
+        left: 0;
+        cursor: text;
+        transform: translateY(0);
+        transition: all 0.15s ease-out;
 
+        color: #c2cbd2;
+        font-weight: normal;
     }
 
     input {
+        flex-grow: 1;
         padding: 4px 0;
         margin: 0;
         border-radius: 0;
@@ -12,21 +28,57 @@
         background-color: transparent;
         box-shadow: none;
         font-weight: normal;
+
+        &:focus {
+            outline: none;
+            border: 0 none;
+        }
     }
 
+    // Gray bottom border. Set as :before content so that it
+    // isn't affected by padding
+    &:before {
+        border-bottom: 1px solid rgba(0,0,0,.08);
+        position: absolute;
+        bottom: 20px;
+        content: '';
+        height: 1px;
+        width: 100%;
+    }
+
+    // Focused bottom border. Set as :after content so that it
+    // doesn't affect layout of later elements or is impacted by padding
+    &:after {
+        background-color: $primary;
+        bottom: 20px;
+        content: '';
+        height: 2px;
+        left: 45%;
+        position: absolute;
+        transition-duration: .2s;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        visibility: hidden;
+        width: 10px;
+    }
+
+    /* Focused/has-value states
+    ========================================================================== */
     &.mi-focused {
-
+        &:after {
+            left: 0;
+            visibility: visible;
+            width: 100%;
+        }
     }
 
-    &.mi-has-value {
-
+    &.mi-focused, &.mi-has-value {
+        label {
+            transform: translateY(-20px); // floating label
+            color: $primary;
+            font-weight: 500;
+            font-size: 12px;
+        }
     }
 
-    &.mi-valid {
-
-    }
-
-    &.mi-dirty {
-
-    }
+    // TODO: nofloat, valid, dirty, invalid
 }
