@@ -85,7 +85,7 @@
         return {
 
             compile: function (element) {
-                element.addClass(miClasses.input + ' ' + miClasses.text);
+                element.addClass(miClasses.INPUT + ' ' + miClasses.TEXT);
                 return postLink;
             },
 
@@ -96,11 +96,11 @@
                 }
 
                 this.setFocused = function (isFocused) {
-                    toggleClass(isFocused, miClasses.focused);
+                    toggleClass(isFocused, miClasses.FOCUSED);
                 };
 
                 this.setHasValue = function (hasValue) {
-                    toggleClass(hasValue, miClasses.hasValue);
+                    toggleClass(hasValue, miClasses.HAS_VALUE);
                 };
             }
         };

@@ -58,7 +58,7 @@ describe('material-text', function () {
     // Class validation
     it('should add the wrapper and text input classes', function () {
         var text = createElement();
-        expect(text).toHaveClass(miClasses.input + ' ' + miClasses.text);
+        expect(text).toHaveClass(miClasses.INPUT + ' ' + miClasses.TEXT);
     });
 
     it('should add and remove the focused class', function () {
@@ -67,34 +67,34 @@ describe('material-text', function () {
 
         // Focus
         input.triggerHandler('focus');
-        expect(text).toHaveClass(miClasses.focused);
+        expect(text).toHaveClass(miClasses.FOCUSED);
 
         // Blur
         input.triggerHandler('blur');
-        expect(text).not.toHaveClass(miClasses.focused);
+        expect(text).not.toHaveClass(miClasses.FOCUSED);
     });
 
     it('should add and remove the has-value class according to model updates', function () {
         var text = createElement('<input ng-model="test">');
-        expect(text).not.toHaveClass(miClasses.hasValue);
+        expect(text).not.toHaveClass(miClasses.HAS_VALUE);
         scope.$apply('test = "test"');
-        expect(text).toHaveClass(miClasses.hasValue);
+        expect(text).toHaveClass(miClasses.HAS_VALUE);
         scope.$apply('test = ""');
-        expect(text).not.toHaveClass(miClasses.hasValue);
+        expect(text).not.toHaveClass(miClasses.HAS_VALUE);
     });
 
     it('should add and remove the has-value class according to DOM updates', function () {
         var text = createElement(),
             input = text.find('input');
-        expect(text).not.toHaveClass(miClasses.hasValue);
+        expect(text).not.toHaveClass(miClasses.HAS_VALUE);
         input.val('test').triggerHandler('input');
-        expect(text).toHaveClass(miClasses.hasValue);
+        expect(text).toHaveClass(miClasses.HAS_VALUE);
         input.val('').triggerHandler('input');
-        expect(text).not.toHaveClass(miClasses.hasValue);
+        expect(text).not.toHaveClass(miClasses.HAS_VALUE);
     });
 
     it('should add the has-value class for static values', function () {
         var text = createElement('<input value="test">');
-        expect(text).toHaveClass(miClasses.hasValue);
+        expect(text).toHaveClass(miClasses.HAS_VALUE);
     });
 });
