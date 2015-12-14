@@ -18,5 +18,12 @@
     ],
     "test": [
         "karma:unit"
+    ],
+    "release": [
+        "build",
+        "test",
+        "prompt",
+        "bump",
+        "npm-publish"
     ]
 }

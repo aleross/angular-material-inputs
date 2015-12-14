@@ -48,13 +48,6 @@ describe('material-text', function () {
         }).toThrow(error);
     });
 
-    // Attributes
-    // TODO
-    it('should use and interpolate miLabel', function () {
-
-    });
-
-
     // Class validation
     it('should add the wrapper and text input classes', function () {
         var text = createElement();

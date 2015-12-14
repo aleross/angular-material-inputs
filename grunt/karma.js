@@ -12,9 +12,13 @@ module.exports = {
     },
     unit: {
         singleRun: true,
-    },
-    watch: {
-        singleRun: false,
-        background: true,
-    },
+        preprocessors: {
+            'dist/material-inputs.js': 'coverage'
+        },
+        reporters: ['coverage'],
+        coverageReporter: {
+            type: 'lcov',
+            dir: 'coverage/',
+        },
+    }
 };
