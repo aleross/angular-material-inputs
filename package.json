@@ -6,6 +6,9 @@
     "url": "https://github.com/aleross/angular-material-inputs"
   },
   "main": "material-inputs.min.js",
+  "scripts": {
+    "test": "grunt test"
+  },
   "bugs": "https://github.com/aleross/angular-material-inputs/issues",
   "keywords": [
     "angular",
