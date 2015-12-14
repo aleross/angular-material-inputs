@@ -15,23 +15,6 @@
 
     function materialTextDirective($compile, miClasses) {
 
-        // TODO: add/remove classes and styling
-        // TODO: ID/name
-        // - make created label/input match existing label/input ID/name
-        // - observe label attribute to match ID
-        // TODO: attribute pass-through (?)
-        // - list of defined ones:
-        //      - type
-        //      - required
-        // Todo: mi-autocomplete
-        //  - show filled state when autofilled, by having a timer to detect filling?
-        // Todo: min/max length
-        //  - show message
-        // Todo: required/ng-messages
-        // - show message
-        // Todo: input addon/prepend
-        // Todo: additional form validation states: dirty, valid, invalid, pristine
-
         /**
          * The post link function is executed in a bottom-up manner, so the HTML
          * of child directives is already available. If a child directive has added an input
