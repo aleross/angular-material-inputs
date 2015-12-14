@@ -8,8 +8,8 @@ AngularJS directives that make it easy to use material design in your forms.
 
 **Supported inputs:**
 
-1. **Text** (any type) `<material-text></material-text>`
-2. **Checkbox** `<material-checkbox></material-checkbox>`
+1. **Text** (any type) `<material-text>`
+2. **Checkbox** `<material-checkbox>`
 
 This project is a lightweight implementation of the material design form inputs for easy use in your Angular project, or to be used
 as the basis for your own material design implementation. If you're looking for a more comprehensive implementation of Google's material design, check out:
