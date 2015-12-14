@@ -6,7 +6,7 @@
     "Alex Ross <davidross.alex@gmail.com>"
   ],
   "description": "AngularJS directives for material design HTML inputs",
-  "main": "material-inputs.min.js",
+  "main": ["dist/material-inputs.min.js", "dist/material-inputs.min.css"],
   "keywords": [
     "material",
     "material design",
