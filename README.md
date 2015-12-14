@@ -6,6 +6,9 @@ AngularJS directives that make it easy to use material design in your forms.
 [![Dependencies Status](https://david-dm.org/aleross/angular-material-inputs.svg)](https://david-dm.org/aleross/angular-material-inputs.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/aleross/angular-material-inputs/blob/master/LICENSE)
 
+**Supported inputs:**
+- **Text** (any type) `<material-text></material-text>`
+
 This project is a lightweight implementation of the material design form inputs for easy use in your Angular project, or to be used
 as the basis for your own material design implementation. If you're looking for a more comprehensive implementation of Google's material design, check out:
 - **Angular Material:** [website](https://material.angularjs.org/latest/) | [source](https://github.com/angular/material)
