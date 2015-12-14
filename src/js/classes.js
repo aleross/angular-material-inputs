@@ -5,4 +5,7 @@ angular.module('material-inputs').constant('miClasses', {
     // input states
     focused: 'mi-focused',
     hasValue: 'mi-has-value',
+
+    // touched?
+    // dirty?
 });
