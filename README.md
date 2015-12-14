@@ -20,6 +20,13 @@ as the basis for your own material design implementation. If you're looking for 
 - **Material UI:** [website](http://www.material-ui.com/#/) | [source](https://github.com/callemall/material-ui)
 - **Ionic Material:** [website](http://ionicmaterial.com/) | [source](https://github.com/zachsoft/Ionic-Material)
 
+##Installation
+**Bower:**
+`bower install angular-material-inputs --save`
+
+**npm:**
+`npm install angular-material-inputs`
+
 ##License
 Licensed under the MIT license. See [LICENSE](https://github.com/aleross/angular-material-inputs/blob/master/LICENSE) file for more details.
 
