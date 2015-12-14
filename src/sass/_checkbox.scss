@@ -1,0 +1,103 @@
+/* ==========================================================================
+   Material design for checkbox inputs using <material-checkbox>
+   ========================================================================== */
+.mi-checkbox {
+
+    /* Style controls
+    ========================================================================== */
+    $checkbox-animation-duration: 0.15s;
+    $checkbox-selected-color: $primary;
+    $checkbox-unselected-color: #d3dbe2;
+    $checkbox-size: 16px;
+    $checkbox-font-size: 14px;
+    $checkbox-border-size: 1px;
+    $checkbox-border-radius: 2px;
+
+    transform: translateZ(0); // Force 3d rendering
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+
+    label {
+        //    color: $checkbox-label-color;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        user-select: none; // Prevents weird highlighting on click occasionally
+        font-size: $checkbox-font-size;
+
+        // Align text label with checkbox
+        .checkbox-label {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        // because these links are bigger, we want their font to be normal
+        a {
+            font-weight: normal;
+        }
+
+        // Hide native checkbox
+        input[type=checkbox] {
+            opacity: 0;
+            position: absolute;
+            margin: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .mi-check {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 3px;
+            overflow: hidden;
+            z-index: 1;
+            height: $checkbox-size;
+            width: $checkbox-size;
+            border: $checkbox-border-size solid;
+            border-radius: $checkbox-border-radius;
+            color: $checkbox-unselected-color; // Unselected border color
+            background: #fff;
+            user-select: none;
+
+            /* Not checked
+            ========================================================================== */
+            &:before {
+                position: absolute;
+                left: 4px;
+                top: 1px;
+
+                opacity: 0;
+                transform: scale(0) rotate(45deg);
+                transition: all $checkbox-animation-duration;
+
+                content: '';
+                display: block;
+                width: 5px;
+                height: 10px;
+                border: solid $primary;
+                border-width: 0 2px 2px 0;
+            }
+        }
+
+        /* Checked
+        ========================================================================== */
+        input[type=checkbox]:checked + .mi-check:before {
+            opacity: 1;
+            transform: scale(1) rotate(45deg);
+            transition: all $checkbox-animation-duration;
+        }
+
+        /* Disabled
+        ========================================================================== */
+        input[type=checkbox][disabled]:not(:checked) ~ .mi-check:before,
+        input[type=checkbox][disabled] + .circle {
+            opacity: 0.5;
+        }
+    }
+}

@@ -64,5 +64,87 @@
     font-weight: 500;
     font-size: 12px; }
 
+/* ==========================================================================
+   Material design for checkbox inputs using <material-checkbox>
+   ========================================================================== */
+.mi-checkbox {
+  /* Style controls
+    ========================================================================== */
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  margin: 0;
+  padding: 0;
+  display: inline-block; }
+  .mi-checkbox label {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    font-size: 14px;
+    /* Checked
+        ========================================================================== */
+    /* Disabled
+        ========================================================================== */ }
+    .mi-checkbox label .checkbox-label {
+      display: inline-block;
+      vertical-align: middle; }
+    .mi-checkbox label a {
+      font-weight: normal; }
+    .mi-checkbox label input[type=checkbox] {
+      opacity: 0;
+      position: absolute;
+      margin: 0;
+      z-index: -1;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      left: 0;
+      pointer-events: none; }
+    .mi-checkbox label .mi-check {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 3px;
+      overflow: hidden;
+      z-index: 1;
+      height: 16px;
+      width: 16px;
+      border: 1px solid;
+      border-radius: 2px;
+      color: #d3dbe2;
+      background: #fff;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+      /* Not checked
+            ========================================================================== */ }
+      .mi-checkbox label .mi-check:before {
+        position: absolute;
+        left: 4px;
+        top: 1px;
+        opacity: 0;
+        -webkit-transform: scale(0) rotate(45deg);
+                transform: scale(0) rotate(45deg);
+        transition: all 0.15s;
+        content: '';
+        display: block;
+        width: 5px;
+        height: 10px;
+        border: solid #4078C0;
+        border-width: 0 2px 2px 0; }
+    .mi-checkbox label input[type=checkbox]:checked + .mi-check:before {
+      opacity: 1;
+      -webkit-transform: scale(1) rotate(45deg);
+              transform: scale(1) rotate(45deg);
+      transition: all 0.15s; }
+    .mi-checkbox label input[type=checkbox][disabled]:not(:checked) ~ .mi-check:before,
+    .mi-checkbox label input[type=checkbox][disabled] + .circle {
+      opacity: 0.5; }
+
 .mi-input input, .mi-input label {
-  font-size: 16px; }
+  font-size: 16px;
+  font-weight: normal; }

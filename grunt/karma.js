@@ -15,7 +15,7 @@ module.exports = {
         preprocessors: {
             'dist/material-inputs.js': 'coverage'
         },
-        reporters: ['coverage'],
+        reporters: ['coverage', 'progress'],
         coverageReporter: {
             type: 'lcov',
             dir: 'coverage/',
