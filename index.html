@@ -16,9 +16,11 @@
         <!-- Application -->
         <script>
             angular.module('example', ['ngMessages','material-inputs']).run(function ($rootScope) {
-                $rootScope.test = 10;
+                $rootScope.foo = {
+                    bar: true
+                };
 
-                $rootScope.$watch('test', function (val) {
+                $rootScope.$watch('foo.bar', function (val) {
                     console.log('root:', val);
                 });
             });
@@ -33,19 +35,12 @@
         <div class="container">
             <material-text>
                 <label>Test</label>
-                <test></test>
-                <p></p>
             </material-text>
 
-            <material-checkbox>Checkbox</material-checkbox>
-
-            <div class="row">
-                <div class="col-sm-3">
-                    <form class="form-material">
-                        <p ng-bind="test"></p>
-                    </form>
-                </div>
-            </div>
+            <material-checkbox>
+                <input ng-model="foo.bar">
+                Checkbox
+            </material-checkbox>
         </div>
     </body>
 </html>
