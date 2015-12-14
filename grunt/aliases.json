@@ -17,7 +17,8 @@
         "postcss"
     ],
     "test": [
-        "karma:unit"
+        "karma:unit",
+        "coveralls"
     ],
     "release": [
         "build",
