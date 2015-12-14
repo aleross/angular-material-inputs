@@ -9,7 +9,7 @@ AngularJS directives that make it easy to use material design in your forms.
 This project is a lightweight implementation of the material design form inputs for Angular projects. 
 If you're looking for a more comprehensive implementations of Google's material design, check out:
 - **Angular Material:** [website](https://material.angularjs.org/latest/) | [source](https://github.com/angular/material)
-- **Material Design Lite:** [website](http://www.getmdl.io/)) | [source](https://github.com/google/material-design-lite)
+- **Material Design Lite:** [website](http://www.getmdl.io/) | [source](https://github.com/google/material-design-lite)
 - **Polymer Project:** [website](https://www.polymer-project.org/1.0/) | [source](https://github.com/polymer/polymer)
 - **Materialize:** [website](http://materializecss.com/) | [source](https://github.com/Dogfalo/materialize)
 - **Material UI:** [website](http://www.material-ui.com/#/) | [source](https://github.com/callemall/material-ui)
