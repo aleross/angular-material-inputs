@@ -7,10 +7,10 @@
         return {
             restrict: 'E',
             template: '<label>' +
-                '<input type="checkbox">' +
-                '<span class="mi-check"></span>' +
-                '<span class="checkbox-label"></span>' +
-            '</label>',
+                          '<input type="checkbox">' +
+                          '<span class="mi-check"></span>' +
+                          '<span class="checkbox-label"></span>' +
+                      '</label>',
             transclude: true,
             compile: function (element) {
                 element.addClass(miClasses.INPUT + ' ' + miClasses.CHECKBOX);
