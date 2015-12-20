@@ -1,0 +1,3 @@
+describe('material-radio', function () {
+
+});

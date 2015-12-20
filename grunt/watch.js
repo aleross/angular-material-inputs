@@ -8,12 +8,18 @@ module.exports = {
         files: ['src/sass/**/*.scss'],
         tasks: ['build-css'],
     },
+
+    // hot-swap CSS changes
+    css: {
+        files: ['dist/*.css'],
+        options: { livereload: true },
+    },
     templates: {
         files: ['src/templates/*'],
         tasks: ['html2js', 'concat'],
     },
     livereload: {
-        files: ['dist/*', 'index.html'],
+        files: ['dist/*.js', 'index.html'],
         options: { livereload: true },
     },
 };

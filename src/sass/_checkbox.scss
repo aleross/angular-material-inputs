@@ -14,16 +14,10 @@
     $checkbox-border-radius: 2px;
 
     transform: translateZ(0); // Force 3d rendering
-    margin: 0;
-    padding: 0;
-    display: inline-block;
+    margin-bottom: 10px;
+    display: block;
 
     label {
-        //    color: $checkbox-label-color;
-        cursor: pointer;
-        padding: 0;
-        margin: 0;
-        user-select: none; // Prevents weird highlighting on click occasionally
         font-size: $checkbox-font-size;
 
         // Align text label with checkbox
@@ -54,7 +48,7 @@
             position: relative;
             display: inline-block;
             vertical-align: middle;
-            margin-right: 3px;
+            margin-right: 8px;
             overflow: hidden;
             z-index: 1;
             height: $checkbox-size;
