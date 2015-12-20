@@ -124,7 +124,7 @@
             ========================================================================== */ }
       .mi-checkbox label .mi-check:before {
         position: absolute;
-        left: 4px;
+        left: 5px;
         top: 1px;
         opacity: 0;
         -webkit-transform: scale(0) rotate(45deg);
