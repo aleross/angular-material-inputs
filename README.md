@@ -1,4 +1,4 @@
-# [Material design](https://www.google.com/design/spec/material-design/introduction.html) form inputs for [AngularJS](https://angular.io/)
+# Material design form inputs for [AngularJS](https://angular.io/)
 AngularJS directives that make it easy to use material design in your forms.
 
 [![Build Status](https://travis-ci.org/aleross/angular-material-inputs.svg?branch=master)](https://travis-ci.org/aleross/angular-material-inputs)
@@ -15,7 +15,7 @@ AngularJS directives that make it easy to use material design in your forms.
 3. **Radio** `<material-radio>`
 4. **Switch** `<material-switch>`
 
-This project is a lightweight implementation of the material design form inputs for easy use in your Angular project, or to be used
+This project is a lightweight implementation of the [material design]((https://www.google.com/design/spec/material-design/introduction.html)) form inputs for easy use in your Angular project, or to be used
 as the basis for your own material design implementation. If you're looking for a more comprehensive implementation of Google's material design, check out:
 - **Angular Material:** [website](https://material.angularjs.org/latest/) | [source](https://github.com/angular/material)
 - **Material Design Lite:** [website](http://www.getmdl.io/) | [source](https://github.com/google/material-design-lite)
