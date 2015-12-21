@@ -17,7 +17,7 @@
                 return function postLink(scope, element, attrs, ctrl, transclude) {
 
                     // Copy transcluded input or wrapped html into checkbox label
-                    transclude(function(clone) {
+                    transclude(function (clone) {
                         if (clone) {
 
                             // Check to see if our transcluded HTML includes an input
@@ -44,8 +44,8 @@
                             }
                         }
                     });
-                }
-            }
-        }
+                };
+            },
+        };
     }
 }(angular.module('material-inputs')));

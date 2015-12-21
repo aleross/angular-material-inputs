@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Material design for switch inputs using <material-switch>
+   ========================================================================== */
+.mi-switch {
+
+    $switch-width: 34px;
+    $circle-size: 20px;
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .switch-body {
+        position: relative;
+        height: 20px;
+        padding-left: $switch-width;
+        margin-right: 8px;
+
+        /* Circle
+        ========================================================================== */
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            margin-top: -10px;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            box-shadow: 0 3px 1px -2px rgba(0,0,0,.14),0 2px 2px 0 rgba(0,0,0,.098),0 1px 5px 0 rgba(0,0,0,.084);
+            background: #fff;
+            transition: all 0.15s;
+        }
+
+        /* Bar
+        ========================================================================== */
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            margin-top: -7px;
+            left: 1px;
+            width: $switch-width;
+            height: 14px;
+            border-radius: 8px;
+            background: $gray;
+            transition: all 0.15s;
+        }
+    }
+
+    /* Active state
+    ========================================================================== */
+    input[type=checkbox]:checked ~ .switch-body {
+
+        // Active circle
+        &:before {
+            left: $switch-width - $circle-size + 2px;
+        }
+
+        // Active bar
+        &:after {
+            background: $primary;
+        }
+    }
+
+    input {
+        display: none;
+    }
+
+    /* Animations
+    ========================================================================== */
+    @keyframes toggle-on {
+        0% {
+            left: 0;
+        }
+        90% {
+            left: 18px;
+        }
+        100% {
+            left: 16px;
+        }
+    }
+
+    @keyframes toggle-off {
+        0% {
+            left: 16px;
+        }
+        90% {
+            left: -1px;
+        }
+        100% {
+            left: 0;
+        }
+    }
+}

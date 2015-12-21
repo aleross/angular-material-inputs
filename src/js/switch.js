@@ -1,19 +1,19 @@
 (function (module) {
     'use strict';
 
-    module.directive('materialRadio', materialRadioDirective);
+    module.directive('materialSwitch', materialSwitchDirective);
 
-    function materialRadioDirective(miClasses, $compile) {
+    function materialSwitchDirective(miClasses, $compile) {
         return {
             restrict: 'E',
             template: '<label>' +
-                          '<input type="radio">' +
-                          '<span class="radio-circle"></span>' +
-                          '<span class="radio-label"></span>' +
+                          '<input type="checkbox">' +
+                          '<span class="switch-body"></span>' +
+                          '<span class="switch-label"></span>' +
                       '</label>',
             transclude: true,
             compile: function (element) {
-                element.addClass(miClasses.INPUT + ' ' + miClasses.RADIO);
+                element.addClass(miClasses.INPUT + ' ' + miClasses.SWITCH);
                 return function postLink(scope, element, attrs, ctrl, transclude) {
 
                     // Copy transcluded input or wrapped html into checkbox label
@@ -21,7 +21,7 @@
                         if (clone) {
 
                             // Check to see if our transcluded HTML includes an input
-                            var label = angular.element(element[0].querySelector('.radio-label')),
+                            var label = angular.element(element[0].querySelector('.switch-label')),
                                 inputCount = 0;
 
                             // Add transcluded input or label content in appropriate places
@@ -31,7 +31,7 @@
                                     element.find('label').prepend(clone[i]);
 
                                     // Ensure correct input type
-                                    element.find('input').attr('type', 'radio');
+                                    element.find('input').attr('type', 'checkbox');
                                     inputCount += 1;
                                 } else {
                                     label.append(clone[i]);
@@ -42,7 +42,7 @@
                             $compile(element.find('label')[0])(scope);
 
                             if (inputCount > 1) {
-                                throw new Error('<material-radio> can only have one <input>.');
+                                throw new Error('<material-switch> can only have one <input>.');
                             }
                         }
                     });

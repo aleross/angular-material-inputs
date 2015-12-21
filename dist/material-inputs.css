@@ -120,6 +120,94 @@
                 transform: scale(1); }
 
 /* ==========================================================================
+   Material design for switch inputs using <material-switch>
+   ========================================================================== */
+.mi-switch {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+  /* Active state
+    ========================================================================== */
+  /* Animations
+    ========================================================================== */ }
+  .mi-switch .switch-body {
+    position: relative;
+    height: 20px;
+    padding-left: 34px;
+    margin-right: 8px;
+    /* Circle
+        ========================================================================== */
+    /* Bar
+        ========================================================================== */ }
+    .mi-switch .switch-body:before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      margin-top: -10px;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.098), 0 1px 5px 0 rgba(0, 0, 0, 0.084);
+      background: #fff;
+      transition: all 0.15s; }
+    .mi-switch .switch-body:after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      margin-top: -7px;
+      left: 1px;
+      width: 34px;
+      height: 14px;
+      border-radius: 8px;
+      background: #798c9c;
+      transition: all 0.15s; }
+  .mi-switch input[type=checkbox]:checked ~ .switch-body:before {
+    left: 16px; }
+  .mi-switch input[type=checkbox]:checked ~ .switch-body:after {
+    background: #4078C0; }
+  .mi-switch input {
+    display: none; }
+
+@-webkit-keyframes toggle-on {
+  0% {
+    left: 0; }
+  90% {
+    left: 18px; }
+  100% {
+    left: 16px; } }
+
+@keyframes toggle-on {
+  0% {
+    left: 0; }
+  90% {
+    left: 18px; }
+  100% {
+    left: 16px; } }
+
+@-webkit-keyframes toggle-off {
+  0% {
+    left: 16px; }
+  90% {
+    left: -1px; }
+  100% {
+    left: 0; } }
+
+@keyframes toggle-off {
+  0% {
+    left: 16px; }
+  90% {
+    left: -1px; }
+  100% {
+    left: 0; } }
+
+/* ==========================================================================
    Material design for checkbox inputs using <material-checkbox>
    ========================================================================== */
 .mi-checkbox {
