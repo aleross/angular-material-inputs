@@ -175,7 +175,6 @@ angular.module('material-inputs').constant('miClasses', {
             },
         };
     }
-
 }(angular.module('material-inputs')));
 
 (function (module) {

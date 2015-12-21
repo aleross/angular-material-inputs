@@ -50,5 +50,4 @@
             },
         };
     }
-
 }(angular.module('material-inputs')));
