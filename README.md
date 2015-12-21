@@ -1,4 +1,4 @@
-# Material design form inputs for [AngularJS](https://angular.io/)
+# &lt;material-inputs&gt;
 AngularJS directives that make it easy to use material design in your forms.
 
 [![Build Status](https://travis-ci.org/aleross/angular-material-inputs.svg?branch=master)](https://travis-ci.org/aleross/angular-material-inputs)
