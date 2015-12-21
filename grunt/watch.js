@@ -5,13 +5,13 @@ module.exports = {
         tasks: ['concat'],
     },
     sass: {
-        files: ['src/sass/**/*.scss'],
+        files: ['src/sass/**/*.scss', 'demo/*.scss'],
         tasks: ['build-css'],
     },
 
     // hot-swap CSS changes
     css: {
-        files: ['dist/*.css'],
+        files: ['dist/*.css', 'demo/*.css'],
         options: { livereload: true },
     },
     templates: {

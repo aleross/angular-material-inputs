@@ -1,0 +1,55 @@
+a {
+  font-weight: 500;
+  color: #4078C0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif; }
+
+header.jumbotron {
+  background: #fff;
+  text-align: center; }
+  header.jumbotron h1 {
+    font-weight: 900;
+    font-family: 'Lato', sans-serif; }
+  header.jumbotron p:first-of-type {
+    font-size: 24px; }
+  header.jumbotron p:last-of-type {
+    font-size: 16px;
+    color: #798c9c; }
+  header.jumbotron .btn {
+    border-radius: 2px;
+    background-color: #fff;
+    border-color: #4078C0;
+    border-width: 2px;
+    color: #4078C0;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.15s ease-out; }
+    header.jumbotron .btn:hover {
+      background-color: #4078C0;
+      color: #fff; }
+  header.jumbotron #github-fork {
+    position: absolute;
+    right: 0;
+    top: 0; }
+
+.container {
+  width: 600px; }
+
+section article:first-of-type h2 {
+  margin-top: 0; }
+
+section article h2 {
+  font-size: 36px;
+  font-weight: bold; }
+
+footer {
+  text-align: center;
+  margin-top: 58px;
+  padding: 20px 40px;
+  font-family: 'Lato', sans-serif;
+  color: #798c9c; }
+  footer p:first-of-type {
+    margin-bottom: 20px; }
+
+/*# sourceMappingURL=index.css.map */

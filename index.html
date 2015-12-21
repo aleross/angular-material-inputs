@@ -5,6 +5,7 @@
         <!-- Angular -->
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-messages.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
 
         <!-- Bootstrap -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -12,6 +13,9 @@
         <!-- Material inputs -->
         <link href="dist/material-inputs.css" rel="stylesheet">
         <script src="dist/material-inputs.js"></script>
+
+        <!-- Demo -->
+        <link href="demo/index.css" rel="stylesheet">
 
         <!-- Application -->
         <script>
@@ -27,34 +31,84 @@
         </script>
     </head>
     <body>
-        <div class="jumbotron">
+        <header class="jumbotron">
+
+            <!-- Fork me -->
+            <a href="https://github.com/aleross/angular-material-inputs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
             <div class="container">
-                <h1>Example</h1>
+                <h1>&lt;material-inputs&gt;</h1>
+                <p>Lightweight material design form input directives for AngularJS applications.</p>
+                <p>Created by <a href="https://github.com/aleross">@aleross</a>. Licensed under <a>MIT</a>.</p>
+                <button class="btn btn-primary btn-lg">Code on Github</button>
+                <button class="btn btn-primary btn-lg">Download</button>
             </div>
-        </div>
-        <div class="container">
-            <material-text>
-                <label>Test</label>
-            </material-text>
+        </header>
+        <section class="container">
 
-            <material-checkbox>
-                <input ng-model="foo.bar">
-                Checkbox
-            </material-checkbox>
+            <!-- Text inputs -->
+            <article class="row">
+                <div class="col-sm-12">
+                    <h2 class="page-header">Text</h2>
+                    <p>Some text here.</p>
+                    <strong>Example:</strong>
+                    <material-text>
+                        <label>Test</label>
+                    </material-text>
+                </div>
+            </article>
 
-            <material-radio>
-                True
-                <input name="options" ng-model="foo.bar" ng-value="true">
-            </material-radio>
-            <material-radio>
-                False
-                <input name="options" ng-model="foo.bar" ng-value="false">
-            </material-radio>
+            <!-- Checkbox -->
+            <article class="row">
+                <div class="col-sm-12">
+                    <h2 class="page-header">Checkbox</h2>
+                    <p>Some text here.</p>
+                    <strong>Example:</strong>
+                    <material-checkbox>
+                        <input ng-model="foo.bar">
+                        Checkbox
+                    </material-checkbox>
+                </div>
+            </article>
 
-            <material-switch>
-                Test
-                <input ng-model="foo.bar">
-            </material-switch>
-        </div>
+            <!-- Switch -->
+            <article class="row">
+                <div class="col-sm-12">
+                    <h2 class="page-header">Switch</h2>
+                    <p>Some text here.</p>
+                    <strong>Example:</strong>
+                    <material-switch>
+                        Test
+                        <input ng-model="foo.bar">
+                    </material-switch>
+                </div>
+            </article>
+
+            <!-- Radio -->
+            <article class="row">
+                <div class="col-sm-12">
+                    <h2 class="page-header">Radio</h2>
+                    <p>Some text here.</p>
+                    <strong>Example:</strong>
+                    <material-radio>
+                        True
+                        <input name="options" ng-model="foo.bar" ng-value="true">
+                    </material-radio>
+                    <material-radio>
+                        False
+                        <input name="options" ng-model="foo.bar" ng-value="false">
+                    </material-radio>
+                </div>
+            </article>
+        </section>
+        <footer>
+            <div class="container">
+                <p>Freely distributable under the terms of the MIT license.</p>
+                <p>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=aleross&repo=angular-material-inputs&type=star&count=true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=aleross&repo=angular-material-inputs&type=fork&count=true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
+                </p>
+            </div>
+        </footer>
     </body>
 </html>
