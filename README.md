@@ -6,7 +6,7 @@ AngularJS directives that make it easy to use material design in your forms.
 [![Dependencies Status](https://david-dm.org/aleross/angular-material-inputs.svg)](https://david-dm.org/aleross/angular-material-inputs.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/aleross/angular-material-inputs/blob/master/LICENSE)
 
-### [View the demo page](http://aleross.github.io/angular-material-inputs/)
+### [View the demos & documentation](http://aleross.github.io/angular-material-inputs/)
 
 **Supported inputs:**
 
